@@ -1,0 +1,12 @@
+venv/
+__pycache__/
+*.py[cod]
+.env
+.env.*
+
+transitiq-frontend/node_modules/
+transitiq-frontend/.next/
+transitiq-frontend/out/
+
+.DS_Store
+Thumbs.db

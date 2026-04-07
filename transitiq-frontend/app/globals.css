@@ -1,0 +1,98 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f8f3ea;
+  --foreground: #201919;
+  --surface: rgba(255, 250, 244, 0.75);
+  --surface-strong: rgba(255, 252, 247, 0.9);
+  --surface-soft: rgba(255, 245, 232, 0.72);
+  --border: rgba(157, 96, 55, 0.14);
+  --muted: #7b665c;
+  --shadow: 0 26px 70px rgba(115, 75, 49, 0.12);
+  --hero-glow:
+    radial-gradient(circle at top left, rgba(230, 145, 92, 0.28), transparent 34%),
+    radial-gradient(circle at top right, rgba(240, 199, 94, 0.22), transparent 26%),
+    radial-gradient(circle at 70% 75%, rgba(85, 153, 138, 0.16), transparent 24%),
+    linear-gradient(180deg, rgba(255, 251, 246, 0.92), rgba(255, 244, 232, 0.68));
+  --accent: #b85c38;
+  --accent-soft: #f0c7b4;
+  --success: #2f7a5f;
+  --warning: #ca8a04;
+  --danger: #b42318;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: "Segoe UI", "SF Pro Display", "Helvetica Neue", sans-serif;
+  --font-mono: "Consolas", "SFMono-Regular", monospace;
+}
+
+html.dark {
+  --background: #1b1816;
+  --foreground: #f6eee6;
+  --surface: rgba(33, 28, 26, 0.74);
+  --surface-strong: rgba(38, 32, 29, 0.88);
+  --surface-soft: rgba(60, 43, 34, 0.52);
+  --border: rgba(255, 214, 179, 0.1);
+  --muted: #c7b5a8;
+  --shadow: 0 28px 80px rgba(0, 0, 0, 0.38);
+  --hero-glow:
+    radial-gradient(circle at top left, rgba(214, 117, 68, 0.24), transparent 34%),
+    radial-gradient(circle at top right, rgba(226, 186, 70, 0.14), transparent 26%),
+    radial-gradient(circle at 70% 75%, rgba(73, 138, 122, 0.18), transparent 24%),
+    linear-gradient(180deg, rgba(33, 28, 26, 0.94), rgba(24, 20, 18, 0.82));
+  --accent: #f4a261;
+  --accent-soft: #5e3f30;
+  --success: #71c6a7;
+  --warning: #f6c453;
+  --danger: #ff8a7a;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: "Segoe UI", "SF Pro Display", "Helvetica Neue", sans-serif;
+  transition:
+    background-color 220ms ease,
+    color 220ms ease;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(circle at 14% 18%, rgba(230, 145, 92, 0.16), transparent 22%),
+    radial-gradient(circle at 82% 8%, rgba(255, 210, 102, 0.14), transparent 18%),
+    radial-gradient(circle at 65% 84%, rgba(87, 153, 136, 0.12), transparent 20%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+iframe {
+  color-scheme: light;
+}
+
+a {
+  color: inherit;
+}
+
+::selection {
+  background: rgba(184, 92, 56, 0.25);
+}
