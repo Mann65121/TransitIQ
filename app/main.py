@@ -1,5 +1,6 @@
 import json
 import math
+import os
 import warnings
 from urllib.error import HTTPError, URLError
 from urllib.parse import quote
@@ -229,4 +230,7 @@ def predict_route(payload: RoutePredictionRequest):
         "model_inputs": features,
     }
 
-app.mount("/", StaticFiles(directory="frontend", html=True), name="frontend")
+legacy_frontend_dir = "frontend"
+
+if os.path.isdir(legacy_frontend_dir):
+    app.mount("/", StaticFiles(directory=legacy_frontend_dir, html=True), name="frontend")
